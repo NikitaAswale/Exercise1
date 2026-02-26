@@ -41,7 +41,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
-fun BirthdayMessageScreen(onNextClick: () -> Unit) {
+fun MiddleScreen(onNextClick: () -> Unit) {
     val configuration = LocalConfiguration.current
     val screenHeight = configuration.screenHeightDp.toFloat()
 
