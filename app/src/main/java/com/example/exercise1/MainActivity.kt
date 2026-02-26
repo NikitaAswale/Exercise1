@@ -15,7 +15,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.exercise1.ui.screens.RevealScreen
 import com.example.exercise1.ui.screens.SurpriseScreen
-import com.example.exercise1.ui.screens.BirthdayMessageScreen
+import com.example.exercise1.ui.screens.MiddleScreen
 import com.example.exercise1.ui.screens.JourneyScreen
 import com.example.exercise1.ui.theme.Exercise1Theme
 
@@ -85,21 +85,21 @@ fun BirthdayAppNavHost(
         composable("reveal") {
             RevealScreen(
                 onRevealClick = {
-                    navController.navigate("birthday_message") {
+                    navController.navigate("middle_screen") {
                         popUpTo("reveal") { inclusive = true }
                     }
                 },
                 playMusic = playMusic
             )
         }
-        composable("birthday_message") {
-            BirthdayMessageScreen(
+        composable("middle_screen") {
+            MiddleScreen(
                 onNextClick = {
                     // Stop music when transitioning to stories
                     stopMusic()
                     
                     navController.navigate("journey") {
-                        popUpTo("birthday_message") { inclusive = true }
+                        popUpTo("middle_screen") { inclusive = true }
                     }
                 }
             )
